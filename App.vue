@@ -2,6 +2,7 @@
 export default {
 	onLaunch: function() {
 		console.log('App Launch');
+		this.$store.state.systemInfo = uni.getSystemInfoSync()
 	},
 	onShow: function() {
 		console.log('App Show');
