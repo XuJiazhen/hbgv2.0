@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+		欢迎来到慧办公V2.0版本
 	</view>
 </template>
 
@@ -8,14 +9,12 @@
 		data() {
 			return {
 			}
+		},
+		onLoad() {
+			console.log('HOME PAGE IS LOADED.')
 		}
 	}
 </script>
 
 <style>
-	.container {
-		padding: 20px;
-		font-size: 14px;
-		line-height: 24px;
-	}
 </style>

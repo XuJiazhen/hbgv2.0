@@ -119,6 +119,11 @@
                     }
                 }
             }
+        },
+        "splashscreen" : {
+            "waiting" : false,
+						"alwaysShowBeforeRender": false,
+						"autoclose": false
         }
     },
     "quickapp" : {},

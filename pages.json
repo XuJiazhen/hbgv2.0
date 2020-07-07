@@ -1,14 +1,48 @@
 {
 	"pages": [{
-		"path": "pages/index/index",
+		"path": "pages/index/index"
+	}, {
+		"path": "pages/index/login/index",
 		"style": {
-			"navigationBarTitleText": "慧办公V2.0"
+			"app-plus": {
+				"titleNView": {
+					"backgroundColor": "#FFFFFF",
+					"titleColor": "#000000",
+					"titleText": "",
+					"titleOverflow": "ellipsis",
+					"type": "default",
+					"homeButton": "false",
+					"autoBackButton": "true"
+				}
+			}
+		}
+	}, {
+		"path": "pages/index/register/index",
+		"style": {
+			"app-plus": {
+				"titleNView": {
+					"backgroundColor": "#FFFFFF",
+					"titleColor": "#000000",
+					"titleText": "新员工入职",
+					"titleOverflow": "ellipsis",
+					"type": "default",
+					"homeButton": "false",
+					"autoBackButton": "true",
+					"splitLine": {
+						"color": "#e3e3e3",
+						"height": "1px"
+					}
+				}
+			},
+			"navigationBarShadow": {
+				"colorType": "grey"
+			}
 		}
 	}],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
-		"backgroundColor": "#FFFFFF"
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
 	}
 }

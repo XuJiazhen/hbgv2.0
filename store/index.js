@@ -5,7 +5,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state:{
 		systemInfo: null,
-		hasLogin: false
+		hasLogin: false,
+		userFirstLaunch: false
 	},
 	mutations:{},
 	actions:{}
