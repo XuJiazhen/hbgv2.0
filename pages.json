@@ -27,16 +27,16 @@
 					"titleOverflow": "ellipsis",
 					"type": "default",
 					"homeButton": "false",
-					"autoBackButton": "true",
-					"splitLine": {
-						"color": "#e3e3e3",
-						"height": "1px"
-					}
+					"autoBackButton": "true"
+					// "splitLine": {
+					// 	"color": "#e3e3e3",
+					// 	"height": "1px"
+					// }
 				}
-			},
-			"navigationBarShadow": {
-				"colorType": "grey"
 			}
+			// "navigationBarShadow": {
+			// 	"colorType": "grey"
+			// }
 		}
 	}],
 	"globalStyle": {

@@ -75,7 +75,7 @@
 		}
 		
 		.uni-input-input {
-			font-size: 20px;
+			font-size: 16px;
 		}
 
 		.icon-input {
