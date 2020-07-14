@@ -1,6 +1,12 @@
 {
 	"pages": [{
-		"path": "pages/index/index"
+		"path": "pages/tabbar/desk/desk",
+		"style": {
+			"navigationBarTitleText": "工作台",
+			"app-plus": {
+				"bounce": "vertical"
+			}
+		}
 	}, {
 		"path": "pages/index/login/index",
 		"style": {
@@ -38,11 +44,82 @@
 			// 	"colorType": "grey"
 			// }
 		}
+	}, {
+		"path": "pages/tabbar/message/message",
+		"style": {
+			"navigationBarTitleText": "消息",
+			"app-plus": {
+				"bounce": "vertical"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/task/task",
+		"style": {
+			"navigationBarTitleText": "任务",
+			"app-plus": {
+				"bounce": "vertical"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/contact/contact",
+		"style": {
+			"navigationBarTitleText": "通讯录",
+			"app-plus": {
+				"bounce": "vertical"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/user/user",
+		"style": {
+			"navigationBarTitleText": "我的",
+			"app-plus": {
+				"bounce": "vertical"
+			}
+		}
 	}],
 	"globalStyle": {
-		"navigationStyle": "custom",
+		"navigationStyle": "default",
+		"navigationBarTitleText": "慧办公V2.0",
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#1a3751",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"fontSize": "12px",
+		"iconWidth": "26px",
+		"height": "52px",
+		"list": [{
+				"pagePath": "pages/tabbar/message/message",
+				"iconPath": "static/tabbar-icons/comments.png",
+				"selectedIconPath": "static/tabbar-icons/comments-fill.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/tabbar/task/task",
+				"iconPath": "static/tabbar-icons/task-management.png",
+				"selectedIconPath": "static/tabbar-icons/task-management-fill.png",
+				"text": "任务"
+			}, {
+				"pagePath": "pages/tabbar/desk/desk",
+				"iconPath": "static/tabbar-icons/all.png",
+				"selectedIconPath": "static/tabbar-icons/all-fill.png",
+				"text": "工作台"
+			}, {
+				"pagePath": "pages/tabbar/contact/contact",
+				"iconPath": "static/tabbar-icons/contacts.png",
+				"selectedIconPath": "static/tabbar-icons/contacts-fill.png",
+				"text": "通讯录"
+			}, {
+				"pagePath": "pages/tabbar/user/user",
+				"iconPath": "static/tabbar-icons/account.png",
+				"selectedIconPath": "static/tabbar-icons/account-fill.png",
+				"text": "我的"
+			}
+
+		]
 	}
 }
