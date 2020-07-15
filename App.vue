@@ -4,7 +4,7 @@
 			console.log('APP LAUNCH');
 			// #ifdef H5
 			uni.reLaunch({
-				url: "./pages/index/login/index",
+				url: "./pages/tabbar/user/user",
 				success: () => {
 					console.log('TO LOGIN PAGE - H5.')
 				}
