@@ -54,7 +54,7 @@
 			},
 			onClear(e) {
 				this.$emit('input', '')
-				console.log('CLEAR INPUT.', this.confirmType)
+				console.log('CLEAR INPUT.')
 			},
 			onShowpassward(e) {
 				this.showPassward = !this.showPassward

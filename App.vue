@@ -4,9 +4,9 @@
 			console.log('APP LAUNCH');
 			// #ifdef H5
 			uni.reLaunch({
-				url: "./pages/index/register/index",
+				url: "./pages/tabbar/user/user",
 				success: () => {
-					console.log('跳转成功')
+					console.log('TO LOGIN PAGE - H5.')
 				}
 			})
 			// #endif
@@ -15,8 +15,9 @@
 				const userInfo = uni.getStorageSync('userInfo')
 				if (!userInfo) {
 					uni.reLaunch({
-						url: "./pages/index/register/index",
+						url: "./pages/index/login/index",
 						success: () => {
+							console.log('TO LOGIN PAGE - APP.')
 							plus.navigator.closeSplashscreen()
 						}
 					})
@@ -75,7 +76,7 @@
 		}
 		
 		.uni-input-input {
-			font-size: 20px;
+			font-size: 16px;
 		}
 
 		.icon-input {

@@ -8,9 +8,15 @@
 				<view class="use-phone" @click="onUsePhone" :class="[usePhone ? 'active' : '']">
 					<text>手机快速登录</text>
 				</view>
-			</view>
+			</view>			
 
-			<component :is="whichMethod"></component>
+			<template v-if="useAccount">
+				<account-view @inputAccountName="onInputAccountName" @inputPassward="onInputPassward" />
+			</template>
+			
+			<template v-if="usePhone">
+				<phone-view />
+			</template>
 
 			<button type="default" class="btn-primary" style="margin: 30px 0 10px 0;" @click="login">登录</button>
 			<button type="default" class="btn-secondary" style="margin-bottom: 10px;" @click="register">新员工入职</button>
@@ -55,7 +61,9 @@
 				nameOrEmailOrPhone: '',
 				passward: '',
 				useAccount: true,
-				usePhone: false
+				usePhone: false,
+				accountName: '',
+				passward: ''
 			}
 		},
 		computed: {
@@ -76,6 +84,66 @@
 			},
 			login(e) {
 				console.log('LOGIN')
+				const _this = this
+				const accountName = this.accountName
+				const passward = this.passward
+				if (!accountName) {
+					uni.showToast({
+						title: '请填写用户名',
+						position: 'bottom',
+						icon: 'none'
+					})
+					return 
+				}
+				if (!passward) {
+					uni.showToast({
+						title: '请填写密码',
+						position: 'bottom',
+						icon: 'none'
+					})
+					return 
+				}
+				
+				wx.request({
+					url: 'https://ht.huijianfc.cn/appapi.php/login/login',
+					method: 'GET',
+					data: {
+						cellphone: accountName,
+						pwd: passward,
+						clientid: plus.push.getClientInfo().clientid
+					},
+					success: ({ data }) => {
+						if(data.status === 0) {
+							uni.showToast({
+								title: data.msg,
+								position: 'bottom',
+								icon: 'none',
+								success: () => {
+									console.log('登录失败')
+								}
+							})
+						} else {
+							uni.showToast({
+								title: '登录成功',
+								position: 'bottom',
+								icon: 'success',
+								success: () => {
+									uni.setStorageSync('userInfo', JSON.stringify(data.info))
+									uni.reLaunch({
+										url: '../../tabbar/desk/desk',
+										success: () => {
+											console.log('TO INDEX PAGE.')
+										}
+									})
+									console.log('登录成功')
+								}
+							})
+						}
+					},
+					fail: (err) => {
+						console.log(err)
+					}
+				})
 			},
 			register(e) {
 				uni.navigateTo({
@@ -84,9 +152,15 @@
 						console.log('TO REGISTER PAGE.')
 					}
 				})
+			},
+			onInputAccountName(val) {
+				this.accountName = val
+			},
+			onInputPassward(val) {
+				this.passward = val
 			}
 		},
-		onLoad() {
+		onLoad(option) {
 			console.log('PHONE-LOGIN PAGE IS LOADED.')
 		}
 	}
