@@ -34,11 +34,9 @@
 	}, {
 		"path": "pages/tabbar/user/user",
 		"style": {
-			"navigationBarBackgroundColor": "#FFFFFF",
-			"navigationBarTitleText": "",
 			"navigationStyle": "custom",
 			"app-plus": {
-				"bounce": "vertical"
+				"bounce": "none"
 			}
 		}
 	}, {
@@ -68,20 +66,35 @@
 					"type": "default",
 					"homeButton": "false",
 					"autoBackButton": "true"
-					// "splitLine": {
-					// 	"color": "#e3e3e3",
-					// 	"height": "1px"
-					// }
 				}
 			}
-			// "navigationBarShadow": {
-			// 	"colorType": "grey"
-			// }
 		}
 	}, {
 		"path": "pages/tabbar/user/setting/setting",
 		"style": {
-			"navigationBarTitleText": "设置"
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/user/setting/phonenumber/phonenumber",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/user/setting/wechat/wechat",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
 		}
 	}],
 	"globalStyle": {
@@ -125,7 +138,6 @@
 				"selectedIconPath": "static/tabbar-icons/account-fill.png",
 				"text": "我"
 			}
-
 		]
 	}
 }

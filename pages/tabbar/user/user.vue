@@ -1,11 +1,12 @@
 <template>
 	<view class="user-container">
-		<view class="status_bar">
+		<view class="cus-navbar">
+			<view class="status_bar"></view>
+			<view class="title_bar">
+				<uni-icons type="gear" size="28" color="black" @click="onSettingTap"></uni-icons>
+			</view>
 		</view>
 		<view class="info-banner">
-			<view class="cus-navbar">
-				<uni-icons type="gear" size="28" color="black" @click="onSettingClicked"></uni-icons>
-			</view>
 			<view class="base-info">
 				<view class="avatar">
 					<image :src="userInfo.avatarUrl" mode="aspectFit"></image>
@@ -99,13 +100,10 @@
 			};
 		},
 		methods: {
-			onSettingClicked() {
-				console.log('BTN SETTING.')
+			onSettingTap() {
+				console.log('TO PAGE SETTING')
 				uni.navigateTo({
-					url: './setting/setting',
-					success: () => {
-						console.log('TO PAGE SETTING')
-					}
+					url: './setting/setting'
 				})
 			}
 		},
@@ -127,19 +125,25 @@
 		height: 100vh;
 		background-color: $spgrey;
 
-		.status_bar {
-			height: var(--status-bar-height);
-			width: 100%;
+		.cus-navbar {
+			height: calc(var(--status-bar-height) + 55px);
+			background-color: $white;
+
+			.status_bar {
+				height: var(--status-bar-height);
+			}
+
+			.title_bar {
+				height: 55px;
+				line-height: 55px;
+				text-align: right;
+				padding-right: 30rpx;
+			}
 		}
 
 		.info-banner {
 			width: 100%;
 			background-color: $white;
-
-			.cus-navbar {
-				text-align: right;
-				padding: 30rpx;
-			}
 
 			.base-info {
 				padding: 0 30rpx 80rpx 30rpx;
