@@ -3,7 +3,7 @@
 		<view class="cus-navbar">
 			<view class="status_bar"></view>
 			<view class="title_bar">
-				<uni-icons type="back" size="28" color="white" @click="onBackoff"></uni-icons>
+				<uni-icons type="back" size="28" color="white" @click="onBackoff" />
 				<text class="text">微信</text>
 			</view>
 		</view>

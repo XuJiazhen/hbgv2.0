@@ -19,7 +19,7 @@
 						<text class="code">{{ userInfo.turn_real_time ? '正式员工' : '实习员工' }} | {{ userInfo.member_id }}</text>
 						<view class="forward">
 							<text class="iconfont icon-QRcode" style="font-size: 24px; margin-right: 10px;" />
-							<uni-icons class="char" type="forward" size="24" color="#808080" />
+							<uni-icons class="char" type="forward" size="24" :color="forwardIconColor" />
 						</view>
 					</view>
 					<view class="row">
@@ -35,7 +35,7 @@
 				</view>
 				<view class="right">
 					<text class="text">学习中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -45,7 +45,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的信息</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -55,7 +55,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的工资条</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -65,7 +65,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的奖罚单</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -75,17 +75,17 @@
 				</view>
 				<view class="right">
 					<text class="text">帮助中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
-			<view class="info-item">
+			<view class="info-item" @click="onAboutTap">
 				<view class="left">
 					<text class="iconfont icon-xinxi" />
 				</view>
 				<view class="right">
 					<text class="text">关于我们</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 		</view>
@@ -96,14 +96,21 @@
 	export default {
 		data() {
 			return {
+				forwardIconColor: '#b5b5b5',
 				userInfo: {}
 			};
 		},
 		methods: {
 			onSettingTap() {
-				console.log('TO PAGE SETTING')
+				console.log('TO PAGE SETTING.')
 				uni.navigateTo({
 					url: './setting/setting'
+				})
+			},
+			onAboutTap() {
+				console.log('TO PAGE ABOUT.'),
+				uni.navigateTo({
+					url: './about/about'
 				})
 			}
 		},

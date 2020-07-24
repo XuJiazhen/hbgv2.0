@@ -96,6 +96,15 @@
 				"bounce": "none"
 			}
 		}
+	}, {
+		"path": "pages/tabbar/user/about/about",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
 	}],
 	"globalStyle": {
 		"navigationStyle": "default",

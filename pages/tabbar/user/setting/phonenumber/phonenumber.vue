@@ -3,7 +3,7 @@
 		<view class="cus-navbar">
 			<view class="status_bar"></view>
 			<view class="title_bar">
-				<uni-icons type="back" size="28" color="white" @click="onBackoff"></uni-icons>
+				<uni-icons type="back" size="28" color="white" @click="onBackoff" />
 				<text class="text">手机号</text>
 			</view>
 		</view>
@@ -20,7 +20,7 @@
 		</template>
 		
 		<template v-else>
-			<view class="phone correct">
+			<view class="phone error">
 				<image src="@/static/images/phone_error.png" mode="aspectFit" />
 				<text class="title">当前手机号</text>
 				<text class="phonenumber">请前往绑定</text>
@@ -98,8 +98,10 @@
 			margin-top: 15px;
 			
 			image {
-				width: 300rpx;
-				height: 300rpx;
+				width: 150rpx;
+				height: 150rpx;
+				// background-color: red;
+				margin-bottom: 15px;
 			}
 			
 			.phonenumber {

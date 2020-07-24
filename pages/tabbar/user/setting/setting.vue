@@ -3,7 +3,7 @@
 		<view class="cus-navbar">
 			<view class="status_bar"></view>
 			<view class="title_bar">
-				<uni-icons type="back" size="28" color="white" @click="onBackoff"></uni-icons>
+				<uni-icons type="back" size="28" color="white" @click="onBackoff" />
 				<text class="text">设置</text>
 			</view>
 		</view>
@@ -16,7 +16,7 @@
 					</view>
 					<view class="right">
 						<text class="bound">{{ userInfo.cellphone }}</text>
-						<uni-icons type="forward" size="24" color="#808080" />
+						<uni-icons type="forward" size="24" :color="forwardIconColor" />
 					</view>
 				</view>
 			</view>
@@ -28,7 +28,7 @@
 					</view>
 					<view class="right">
 						<text class="bound">{{ userInfo.wx_name }}</text>
-						<uni-icons type="forward" size="24" color="#808080" />
+						<uni-icons type="forward" size="24" :color="forwardIconColor" />
 					</view>
 				</view>
 			</view>
@@ -40,7 +40,7 @@
 					</view>
 					<view class="right">
 						<text class="bound">{{ userInfo.qq_name }}</text>
-						<uni-icons type="forward" size="24" color="#808080" />
+						<uni-icons type="forward" size="24" :color="forwardIconColor" />
 					</view>
 				</view>
 			</view>
@@ -65,6 +65,7 @@
 	export default {
 		data() {
 			return {
+				forwardIconColor: '#b5b5b5',
 				userInfo: {}
 			};
 		},
