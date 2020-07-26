@@ -15,7 +15,7 @@
 				<text class="phonenumber">{{ phonenumber }}</text>
 				<text class="comment-row">此手机号将显示在个人信息中，</text>
 				<text class="comment-row">你也可以使用此手机号登录</text>
-				<button type="default" class="btn-replace">更换手机号</button>
+				<button type="default" class="btn-secondary btn-replace">更换手机号</button>
 			</view>
 		</template>
 		
@@ -26,7 +26,7 @@
 				<text class="phonenumber">请前往绑定</text>
 				<text class="comment-row">此手机号将显示在个人信息中，</text>
 				<text class="comment-row">你也可以使用此手机号登录</text>
-				<button type="default" class="btn-replace">绑定手机号</button>
+				<button type="default" class="btn-secondary btn-replace">绑定手机号</button>
 			</view>
 		</template>
 		
@@ -66,7 +66,7 @@
 		
 		.cus-navbar {
 			height: calc(var(--status-bar-height) + 55px);
-			background-color: $Primary;
+			background-color: $primary;
 
 			.status_bar {
 				height: var(--status-bar-height);
@@ -100,7 +100,6 @@
 			image {
 				width: 150rpx;
 				height: 150rpx;
-				// background-color: red;
 				margin-bottom: 15px;
 			}
 			
@@ -117,8 +116,6 @@
 			.btn-replace {
 				width: 80%;
 				margin: 20px 0;
-				background-color: $Secondary;
-				color: $white;
 			}
 		}
 	}

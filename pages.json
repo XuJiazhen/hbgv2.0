@@ -105,6 +105,15 @@
 				"bounce": "none"
 			}
 		}
+	}, {
+		"path": "pages/tabbar/user/study/study",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
 	}],
 	"globalStyle": {
 		"navigationStyle": "default",

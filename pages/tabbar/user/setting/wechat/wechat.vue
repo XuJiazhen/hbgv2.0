@@ -13,7 +13,7 @@
 				<image :src="avatar" mode="aspectFit" />
 				<text class="name">当前微信：{{ name }}</text>
 				<text class="comment-row">可使用当前已绑定的微信登录</text>
-				<button type="default" class="btn-replace">更换微信</button>
+				<button type="default" class="btn-secondary btn-replace">更换微信</button>
 			</view>
 		</template>
 
@@ -60,7 +60,7 @@
 
 		.cus-navbar {
 			height: calc(var(--status-bar-height) + 55px);
-			background-color: $Primary;
+			background-color: $primary;
 
 			.status_bar {
 				height: var(--status-bar-height);
@@ -109,8 +109,6 @@
 			.btn-replace {
 				width: 80%;
 				margin: 20px 0;
-				background-color: $Secondary;
-				color: $white;
 			}
 		}
 

@@ -110,7 +110,7 @@
 			if (userInfo) {
 				this.userInfo = userInfo
 			}
-			console.log('SETTING PAGE IS LOADED.', this.userInfo)
+			console.log('SETTING PAGE LOADED.', this.userInfo)
 		}
 	}
 </script>
@@ -125,7 +125,7 @@
 
 		.cus-navbar {
 			height: calc(var(--status-bar-height) + 55px);
-			background-color: $Primary;
+			background-color: $primary;
 
 			.status_bar {
 				height: var(--status-bar-height);
@@ -180,7 +180,7 @@
 					align-items: center;
 
 					.bound {
-						color: #808080;
+						color: $grey;
 						margin-right: 10px;
 					}
 				}

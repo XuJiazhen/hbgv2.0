@@ -13,10 +13,6 @@
 			<text class="version">Version {{ version }}</text>
 		</view>
 
-<!-- 		<view class="desc">
-			<text>慧办公，是成都慧建房地产营销策划有限公司开发的一款内部员工专用的办公自动化系统。慧办公为员工提供考勤、打卡、审批、日志、公告、数据统计等OA功能，专注、高效、安全的即时通讯解决方案，让工作沟通更顺畅，让工作更简单，同时接入公司自定义应用工单系统，全面实现智能移动办公。</text>
-		</view> -->
-
 		<view class="features">
 			<view class="introduce">
 				<text>功能介绍</text>
@@ -65,7 +61,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '@/common/styles/variable.scss';
 
 	.about-container {
@@ -109,7 +105,7 @@
 			}
 
 			.name {
-				margin-top: 10px;
+				margin-top: 15px;
 				font-weight: bold;
 				font-size: 24px;
 			}

@@ -28,8 +28,9 @@
 				</view>
 			</view>
 		</view>
+		
 		<view class="info-list">
-			<view class="info-item">
+			<view class="info-item" @click="onStudyTap">
 				<view class="left">
 					<text class="iconfont icon-shu" />
 				</view>
@@ -112,7 +113,13 @@
 				uni.navigateTo({
 					url: './about/about'
 				})
-			}
+			},
+			onStudyTap() {
+				console.log('TO PAGE STUDY.'),
+				uni.navigateTo({
+					url: './study/study'
+				})
+			},
 		},
 		onLoad() {
 			const userInfo = JSON.parse(uni.getStorageSync('userInfo'))
@@ -188,10 +195,10 @@
 
 						.code {
 							background-color: $white;
-							color: $Primary;
+							color: $primary;
 							border-radius: 3px;
 							padding: 3px 5px;
-							border: 1px solid $Primary;
+							border: 1px solid $primary;
 							margin: 7px 0;
 						}
 
@@ -227,7 +234,7 @@
 
 					text {
 						font-size: 32px;
-						color: $Primary;
+						color: $primary;
 						text-align: center;
 						padding: 0 30rpx;
 						box-sizing: border-box;
