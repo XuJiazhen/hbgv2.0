@@ -53,21 +53,21 @@
 		}
 
 		.btn-primary {
-			background-color: $Primary;
+			background-color: $primary;
 			color: $white;
-			border-radius: 3px;
+			border-radius: $border_radius;
 		}
 		
 		.btn-secondary {
-			background-color: $Secondary;
+			background-color: $secondary;
 			color: $white;
-			border-radius: 3px;
+			border-radius: $border_radius;
 		}
 		
 		.btn-captcha {
-			background-color: $Primary;
+			background-color: $primary;
 			color: $white;
-			border-radius: 3px;
+			border-radius: $border_radius;
 		}
 		
 		.uni-input-placeholder {

@@ -1,11 +1,12 @@
 <template>
 	<view class="user-container">
-		<view class="status_bar">
+		<view class="cus-navbar">
+			<view class="status_bar"></view>
+			<view class="title_bar">
+				<uni-icons type="gear" size="28" color="black" @click="onSettingTap"></uni-icons>
+			</view>
 		</view>
 		<view class="info-banner">
-			<view class="cus-navbar">
-				<uni-icons type="gear" size="28" color="black" @click="onSettingClicked"></uni-icons>
-			</view>
 			<view class="base-info">
 				<view class="avatar">
 					<image :src="userInfo.avatarUrl" mode="aspectFit"></image>
@@ -18,7 +19,7 @@
 						<text class="code">{{ userInfo.turn_real_time ? '正式员工' : '实习员工' }} | {{ userInfo.member_id }}</text>
 						<view class="forward">
 							<text class="iconfont icon-QRcode" style="font-size: 24px; margin-right: 10px;" />
-							<uni-icons class="char" type="forward" size="24" color="#808080" />
+							<uni-icons class="char" type="forward" size="24" :color="forwardIconColor" />
 						</view>
 					</view>
 					<view class="row">
@@ -27,14 +28,15 @@
 				</view>
 			</view>
 		</view>
+		
 		<view class="info-list">
-			<view class="info-item">
+			<view class="info-item" @click="onStudyTap">
 				<view class="left">
 					<text class="iconfont icon-shu" />
 				</view>
 				<view class="right">
 					<text class="text">学习中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -44,7 +46,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的信息</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -54,7 +56,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的工资条</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -64,7 +66,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的奖罚单</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -74,17 +76,17 @@
 				</view>
 				<view class="right">
 					<text class="text">帮助中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
-			<view class="info-item">
+			<view class="info-item" @click="onAboutTap">
 				<view class="left">
 					<text class="iconfont icon-xinxi" />
 				</view>
 				<view class="right">
 					<text class="text">关于我们</text>
-					<uni-icons class="icon-right" type="forward" size="24" color="#808080" />
+					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 		</view>
@@ -95,19 +97,29 @@
 	export default {
 		data() {
 			return {
+				forwardIconColor: '#b5b5b5',
 				userInfo: {}
 			};
 		},
 		methods: {
-			onSettingClicked() {
-				console.log('BTN SETTING.')
+			onSettingTap() {
+				console.log('TO PAGE SETTING.')
 				uni.navigateTo({
-					url: './setting/setting',
-					success: () => {
-						console.log('TO PAGE SETTING')
-					}
+					url: './setting/setting'
 				})
-			}
+			},
+			onAboutTap() {
+				console.log('TO PAGE ABOUT.'),
+				uni.navigateTo({
+					url: './about/about'
+				})
+			},
+			onStudyTap() {
+				console.log('TO PAGE STUDY.'),
+				uni.navigateTo({
+					url: './study/study'
+				})
+			},
 		},
 		onLoad() {
 			const userInfo = JSON.parse(uni.getStorageSync('userInfo'))
@@ -127,19 +139,25 @@
 		height: 100vh;
 		background-color: $spgrey;
 
-		.status_bar {
-			height: var(--status-bar-height);
-			width: 100%;
+		.cus-navbar {
+			height: calc(var(--status-bar-height) + 55px);
+			background-color: $white;
+
+			.status_bar {
+				height: var(--status-bar-height);
+			}
+
+			.title_bar {
+				height: 55px;
+				line-height: 55px;
+				text-align: right;
+				padding-right: 30rpx;
+			}
 		}
 
 		.info-banner {
 			width: 100%;
 			background-color: $white;
-
-			.cus-navbar {
-				text-align: right;
-				padding: 30rpx;
-			}
 
 			.base-info {
 				padding: 0 30rpx 80rpx 30rpx;
@@ -177,10 +195,10 @@
 
 						.code {
 							background-color: $white;
-							color: $Primary;
+							color: $primary;
 							border-radius: 3px;
 							padding: 3px 5px;
-							border: 1px solid $Primary;
+							border: 1px solid $primary;
 							margin: 7px 0;
 						}
 
@@ -216,7 +234,7 @@
 
 					text {
 						font-size: 32px;
-						color: $Primary;
+						color: $primary;
 						text-align: center;
 						padding: 0 30rpx;
 						box-sizing: border-box;

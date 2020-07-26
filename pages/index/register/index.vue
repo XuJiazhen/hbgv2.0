@@ -337,7 +337,7 @@
 					}
 
 					.autofill {
-						background-color: $Secondary;
+						background-color: $secondary;
 						color: $white;
 						border-radius: 3px;
 						padding: 3px;
@@ -402,7 +402,7 @@
 							}
 
 							button {
-								background-color: $Secondary;
+								background-color: $secondary;
 								color: $white;
 								font-size: 14px;
 							}
@@ -431,7 +431,7 @@
 
 			.submit {
 				width: 90%;
-				background-color: $Primary;
+				background-color: $primary;
 				border-radius: 3px;
 				color: $white;
 			}

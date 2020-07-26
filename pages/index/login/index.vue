@@ -204,7 +204,7 @@
 				}
 
 				.active {
-					color: $Primary;
+					color: $primary;
 					font-weight: bold;
 					font-size: 24px;
 				}
