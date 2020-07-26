@@ -11,6 +11,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-qunzu_o:before {
+  content: '\ebae';
+}
+
+.icon-dianhua_o:before {
+  content: '\ebaf';
+}
+
+.icon-tianjiahaoyou_o:before {
+  content: '\ebb0';
+}
+
 .icon-meiyuan_o:before {
   content: '\eba1';
 }

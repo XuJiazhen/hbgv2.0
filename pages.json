@@ -24,7 +24,7 @@
 			}
 		}
 	}, {
-		"path": "pages/tabbar/contact/contact",
+		"path": "pages/tabbar/addressbook/addressbook",
 		"style": {
 			"navigationBarTitleText": "通讯录",
 			"app-plus": {
@@ -114,6 +114,15 @@
 				"bounce": "none"
 			}
 		}
+	}, {
+		"path": "pages/tabbar/addressbook/phone/phone",
+		"style": {}
+	}, {
+		"path": "pages/tabbar/addressbook/client/client",
+		"style": {}
+	}, {
+		"path": "pages/tabbar/addressbook/org/org",
+		"style": {}
 	}],
 	"globalStyle": {
 		"navigationStyle": "default",
@@ -146,9 +155,9 @@
 				"selectedIconPath": "static/tabbar-icons/all-fill.png",
 				"text": "工作台"
 			}, {
-				"pagePath": "pages/tabbar/contact/contact",
-				"iconPath": "static/tabbar-icons/contacts.png",
-				"selectedIconPath": "static/tabbar-icons/contacts-fill.png",
+				"pagePath": "pages/tabbar/addressbook/addressbook",
+				"iconPath": "static/tabbar-icons/addressbook.png",
+				"selectedIconPath": "static/tabbar-icons/addressbook-fill.png",
 				"text": "通讯录"
 			}, {
 				"pagePath": "pages/tabbar/user/user",

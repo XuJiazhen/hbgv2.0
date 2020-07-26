@@ -36,7 +36,7 @@
 				</view>
 				<view class="right">
 					<text class="text">学习中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -46,7 +46,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的信息</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -56,7 +56,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的工资条</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -66,7 +66,7 @@
 				</view>
 				<view class="right">
 					<text class="text">我的奖罚单</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -76,7 +76,7 @@
 				</view>
 				<view class="right">
 					<text class="text">帮助中心</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 
@@ -86,7 +86,7 @@
 				</view>
 				<view class="right">
 					<text class="text">关于我们</text>
-					<uni-icons class="icon-right" type="forward" size="24" :color="forwardIconColor" />
+					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
 				</view>
 			</view>
 		</view>
@@ -126,7 +126,7 @@
 			if (userInfo) {
 				this.userInfo = userInfo
 			}
-			console.log('USER PAGE IS LOADED.', this.userInfo)
+			console.log('USER PAGE LOADED.', this.userInfo)
 		}
 	}
 </script>

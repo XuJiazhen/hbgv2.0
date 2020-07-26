@@ -47,6 +47,7 @@
 				})
 				uni.request({
 					url: `${ this.$baseUrl }info/getcontentlist`,
+					method: 'GET',
 					success: (res) => {
 						const newsList = res.data.list
 						for (let i = 0; i < newsList.length; i++) {
