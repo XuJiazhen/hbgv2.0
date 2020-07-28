@@ -837,60 +837,6 @@ var render = function() {
           )
         ],
         1
-      ),
-      _c(
-        "v-uni-view",
-        { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
-        _vm._l(_vm._$g(21, "f"), function(item, $10, $20, $30) {
-          return _c(
-            "v-uni-view",
-            {
-              key: item,
-              staticClass: _vm._$g("21-" + $30, "sc"),
-              attrs: { _i: "21-" + $30 }
-            },
-            [
-              _c(
-                "v-uni-view",
-                {
-                  staticClass: _vm._$g("22-" + $30, "sc"),
-                  attrs: { _i: "22-" + $30 }
-                },
-                [
-                  _c("v-uni-image", {
-                    staticClass: _vm._$g("23-" + $30, "sc"),
-                    attrs: {
-                      src: _vm._$g("23-" + $30, "a-src"),
-                      mode: "scaleToFill",
-                      _i: "23-" + $30
-                    }
-                  })
-                ],
-                1
-              ),
-              _c(
-                "v-uni-view",
-                {
-                  staticClass: _vm._$g("24-" + $30, "sc"),
-                  attrs: { _i: "24-" + $30 }
-                },
-                [
-                  _c(
-                    "v-uni-text",
-                    {
-                      staticClass: _vm._$g("25-" + $30, "sc"),
-                      attrs: { _i: "25-" + $30 }
-                    },
-                    [_vm._v(_vm._$g("25-" + $30, "t0-0"))]
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        }),
-        1
       )
     ],
     1
@@ -1030,7 +976,7 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
 {
-  name: "UniIcons",
+  name: "UniIcons", props: ["type", "color", "size"],
   data: function data() {
     return {
       wxsProps: {} };
@@ -1580,7 +1526,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 29);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.addressbook-container .group[data-v-348c7683] {\r\n  width: 100%;\r\n  border-bottom: 10px solid #f4f4f4;\n}\n.addressbook-container .group .group-item[data-v-348c7683] {\r\n  width: 100%;\r\n  height: 55px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-bottom: 10px;\n}\n.addressbook-container .group .group-item .left[data-v-348c7683] {\r\n  background-color: #1a3751;\r\n  border-radius: 3px;\r\n  color: #ffffff;\r\n  margin-left: 30rpx;\r\n  width: 40px;\r\n  height: 40px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.addressbook-container .group .group-item .left .icon[data-v-348c7683] {\r\n  font-size: 28px;\r\n  padding: 10px;\n}\n.addressbook-container .group .group-item .right[data-v-348c7683] {\r\n  height: 100%;\r\n  width: 100%;\r\n  border-bottom: 1px solid #f4f4f4;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  padding-right: 30rpx;\r\n  margin-left: 30rpx;\n}\n.addressbook-container .group .group-item .right .text[data-v-348c7683] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\n}\n.addressbook-container .group .group-item[data-v-348c7683]:last-child {\r\n  margin-bottom: 0;\n}\n.addressbook-container .group .group-item:last-child .right[data-v-348c7683] {\r\n  border-bottom: none;\n}\n.addressbook-container .colleague-list[data-v-348c7683] {\r\n  width: 100%;\n}\n.addressbook-container .colleague-list .colleague-item[data-v-348c7683] {\r\n  width: 100%;\r\n  height: 55px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-bottom: 10px;\n}\n.addressbook-container .colleague-list .colleague-item .left[data-v-348c7683] {\r\n  border-radius: 3px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-left: 30rpx;\n}\n.addressbook-container .colleague-list .colleague-item .left uni-image[data-v-348c7683] {\r\n  width: 40px;\r\n  height: 40px;\n}\n.addressbook-container .colleague-list .colleague-item .right[data-v-348c7683] {\r\n  height: 100%;\r\n  width: 100%;\r\n  border-bottom: 1px solid #f4f4f4;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  padding-right: 30rpx;\r\n  margin-left: 30rpx;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n.addressbook-container .group[data-v-348c7683] {\r\n  width: 100%;\r\n  border-bottom: 10px solid #f4f4f4;\r\n  padding: 10px 0;\n}\n.addressbook-container .group .group-item[data-v-348c7683] {\r\n  width: 100%;\r\n  height: 55px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-bottom: 10px;\n}\n.addressbook-container .group .group-item .left[data-v-348c7683] {\r\n  background-color: #1a3751;\r\n  border-radius: 3px;\r\n  color: #ffffff;\r\n  margin-left: 30rpx;\r\n  width: 50px;\r\n  height: 50px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\n}\n.addressbook-container .group .group-item .left .icon[data-v-348c7683] {\r\n  font-size: 28px;\r\n  padding: 10px;\n}\n.addressbook-container .group .group-item .right[data-v-348c7683] {\r\n  height: 100%;\r\n  width: 100%;\r\n  border-bottom: 1px solid #f4f4f4;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  padding-right: 30rpx;\r\n  margin-left: 30rpx;\n}\n.addressbook-container .group .group-item .right .text[data-v-348c7683] {\r\n  -webkit-box-flex: 1;\r\n  -webkit-flex: 1;\r\n          flex: 1;\n}\n.addressbook-container .group .group-item[data-v-348c7683]:last-child {\r\n  margin-bottom: 0;\n}\n.addressbook-container .group .group-item:last-child .right[data-v-348c7683] {\r\n  border-bottom: none;\n}\n.addressbook-container .colleague-list[data-v-348c7683] {\r\n  width: 100%;\n}\n.addressbook-container .colleague-list .colleague-item[data-v-348c7683] {\r\n  width: 100%;\r\n  height: 55px;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-bottom: 10px;\n}\n.addressbook-container .colleague-list .colleague-item .left[data-v-348c7683] {\r\n  border-radius: 3px;\r\n  border: 1px solid #f4f4f4;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n  -webkit-justify-content: center;\r\n          justify-content: center;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  margin-left: 30rpx;\n}\n.addressbook-container .colleague-list .colleague-item .left uni-image[data-v-348c7683] {\r\n  width: 50px;\r\n  height: 50px;\n}\n.addressbook-container .colleague-list .colleague-item .right[data-v-348c7683] {\r\n  height: 100%;\r\n  width: 100%;\r\n  border-bottom: 1px solid #f4f4f4;\r\n  box-sizing: border-box;\r\n  display: -webkit-box;\r\n  display: -webkit-flex;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n  -webkit-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: start;\r\n  -webkit-justify-content: flex-start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n  -webkit-align-items: center;\r\n          align-items: center;\r\n  padding-right: 30rpx;\r\n  margin-left: 30rpx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2985,7 +2931,7 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 
 {
-  name: "CusInput",
+  name: "CusInput", props: ["placeholder", "type", "value", "clearable", "displayable"],
   data: function data() {
     return {
       wxsProps: {} };

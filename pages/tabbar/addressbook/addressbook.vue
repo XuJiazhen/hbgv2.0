@@ -32,7 +32,7 @@
 			</view>
 		</view>
 
-		<view class="colleague-list">
+		<!-- 		<view class="colleague-list">
 			<view class="colleague-item" v-for="item in colleagueList">
 				<view class="left">
 					<image class="icon" :src="item.avatarUrl" mode="scaleToFill" />
@@ -41,12 +41,14 @@
 					<text class="text">{{ item.name }}</text>
 				</view>
 			</view>
-		</view>
-		
+		</view> -->
+
 	</view>
 </template>
 
 <script>
+	import pinyin from '@/static/js/pinyin.js'
+
 	export default {
 		data() {
 			return {
@@ -66,11 +68,38 @@
 						hj_uid: id
 					},
 					success: (res) => {
+						const enLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+						const colleagueList = []
+						const sideKeys = []
+
 						if (res.statusCode === 200 && res.data) {
-							for (let i = 0; i < res.data.length; i++) {
-								this.colleagueList.push(res.data[i])
+
+							for (let i = 0; i < enLetters.length; i++) {
+								const colleague = {
+									letter: enLetters[i],
+									data: []
+								}
+
+								res.data.forEach((item) => {
+									const initial = item.name.substring(0, 1)
+									// IS EN & IS COMPLIANT.
+									if (initial.toLowerCase().charCodeAt() === enLetters[i].toLowerCase().charCodeAt()) {
+										colleague.data.push(item)
+									}
+									// IS EN & IS COMPLIANT.
+									if (pinyin.getFullChars(initial).substring(0, 1).toLowerCase() === enLetters[i].toLowerCase()) {
+										colleague.data.push(item)
+									}
+								})
+
+								if (colleague.data.length !== 0) {
+									colleagueList.push(colleague)
+									sideKeys.push(colleague.letter)
+								}
 							}
 						}
+						console.log(colleagueList)
+						console.log(sideKeys)
 						console.log('GET COLLEAGUE LIST SUCCESSFULLY.', res)
 					},
 					fail: (err) => {
@@ -102,6 +131,7 @@
 		.group {
 			width: 100%;
 			border-bottom: 10px solid $spgrey;
+			padding: 10px 0;
 
 			.group-item {
 				width: 100%;
@@ -117,8 +147,8 @@
 					border-radius: 3px;
 					color: $white;
 					margin-left: 30rpx;
-					width: 40px;
-					height: 40px;
+					width: 50px;
+					height: 50px;
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -170,14 +200,15 @@
 
 				.left {
 					border-radius: 3px;
+					border: 1px solid $spgrey;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					margin-left: 30rpx;
 
 					image {
-						width: 40px;
-						height: 40px;
+						width: 50px;
+						height: 50px;
 					}
 				}
 
