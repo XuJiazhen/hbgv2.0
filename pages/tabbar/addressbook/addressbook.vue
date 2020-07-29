@@ -1,5 +1,13 @@
 <template>
 	<view class="addressbook-container">
+		<view class="cus-navbar">
+			<view class="status_bar"></view>
+			<view class="title_bar">
+				<text class="text">通讯录</text>
+				<uni-icons type="search" size="26" color="black" @click="onSearchTap" />
+			</view>
+		</view>
+
 		<scroll-view class="addressbook" :scroll-into-view="scrollViewId" scroll-y="true" scroll-with-animation="true">
 
 			<view class="group" id="top">
@@ -144,6 +152,12 @@
 				}
 				this.scrollViewId = key
 			},
+			onSearchTap() {
+				// uni.navigateTo({
+				// 	url: `./search/search?data`
+				// })
+				console.log('TO PAGE SEARCH.')
+			},
 		},
 		filters: {
 			getInitial(val) {
@@ -169,8 +183,42 @@
 	.addressbook-container {
 		position: relative;
 
+		.cus-navbar {
+			height: calc(var(--status-bar-height) + 55px);
+			background-color: $spgrey;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+			box-sizing: border-box;
+			overflow: hidden;
+
+			.status_bar {
+				height: var(--status-bar-height);
+			}
+
+			.title_bar {
+				height: 55px;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				text-align: left;
+				padding: 0 30rpx;
+
+				.text {
+					color: $black;
+					font-size: 20px;
+					font-weight: bold;
+					flex: 1;
+				}
+			}
+		}
+
 		.addressbook {
-			height: 100vh;
+			height: calc(100vh - var(--status-bar-height) + 55px);
+			margin-top: calc(var(--status-bar-height) + 55px);
 
 			.group {
 				width: 100%;
