@@ -3,7 +3,7 @@
 		<view class="cus-navbar">
 			<view class="status_bar"></view>
 			<view class="title_bar">
-				<uni-icons type="gear" size="28" color="black" @click="onSettingTap"></uni-icons>
+				<uni-icons type="gear" size="26" color="black" @click="onSettingTap"></uni-icons>
 			</view>
 		</view>
 		<view class="info-banner">

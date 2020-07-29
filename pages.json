@@ -26,7 +26,7 @@
 	}, {
 		"path": "pages/tabbar/addressbook/addressbook",
 		"style": {
-			"navigationBarTitleText": "通讯录",
+			"navigationStyle": "custom",
 			"app-plus": {
 				"bounce": "none"
 			}
@@ -123,7 +123,11 @@
 	}, {
 		"path": "pages/tabbar/addressbook/org/org",
 		"style": {}
-	}],
+	}    ,{
+            "path" : "pages/tabbar/addressbook/search/search",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationStyle": "default",
 		"navigationBarTitleText": "慧办公V2.0",
