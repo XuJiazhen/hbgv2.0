@@ -28,7 +28,7 @@
 		"style": {
 			"navigationBarTitleText": "通讯录",
 			"app-plus": {
-				"bounce": "vertical"
+				"bounce": "none"
 			}
 		}
 	}, {

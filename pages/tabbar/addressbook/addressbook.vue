@@ -1,47 +1,62 @@
 <template>
 	<view class="addressbook-container">
-		<view class="group">
-			<view class="group-item">
-				<view class="left">
-					<text class="icon iconfont icon-gerentouxiang_o" />
+		<scroll-view class="addressbook" :scroll-into-view="scrollViewId" scroll-y="true" scroll-with-animation="true">
+
+			<view class="group" id="top">
+				<view class="group-item">
+					<view class="left">
+						<text class="icon iconfont icon-gerentouxiang_o" />
+					</view>
+					<view class="right">
+						<text class="text">客户</text>
+						<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
+					</view>
 				</view>
-				<view class="right">
-					<text class="text">客户</text>
-					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
+
+				<view class="group-item">
+					<view class="left">
+						<text class="icon iconfont icon-qunzu_o" />
+					</view>
+					<view class="right">
+						<text class="text">组织架构</text>
+						<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
+					</view>
+				</view>
+
+				<view class="group-item">
+					<view class="left">
+						<text class="icon iconfont icon-dianhua_o" />
+					</view>
+					<view class="right">
+						<text class="text">手机联系人</text>
+						<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
+					</view>
 				</view>
 			</view>
 
-			<view class="group-item">
-				<view class="left">
-					<text class="icon iconfont icon-qunzu_o" />
+			<view class="colleague-list" v-for="item in colleagueList">
+				<view class="letter" :id="item.letter">
+					<text>{{ item.letter }}</text>
 				</view>
-				<view class="right">
-					<text class="text">组织架构</text>
-					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
+				<view class="colleague" v-for="colleague in item.data">
+					<view class="left">
+						<image class="icon" :src="colleague.avatarUrl" mode="scaleToFill" />
+					</view>
+					<view class="right">
+						<text class="text">{{ colleague.name }}</text>
+					</view>
 				</view>
 			</view>
+			<view class="total" id="bottom">
+				<text>{{ total }}位联系人</text>
+			</view>
+		</scroll-view>
 
-			<view class="group-item">
-				<view class="left">
-					<text class="icon iconfont icon-dianhua_o" />
-				</view>
-				<view class="right">
-					<text class="text">手机联系人</text>
-					<uni-icons class="icon-forward" type="forward" size="24" :color="forwardIconColor" />
-				</view>
+		<view class="sidebar">
+			<view class="sidekey" v-for="key in sideKeys" @click="onJumpTo(key)">
+				<text>{{ key }}</text>
 			</view>
 		</view>
-
-		<!-- 		<view class="colleague-list">
-			<view class="colleague-item" v-for="item in colleagueList">
-				<view class="left">
-					<image class="icon" :src="item.avatarUrl" mode="scaleToFill" />
-				</view>
-				<view class="right">
-					<text class="text">{{ item.name }}</text>
-				</view>
-			</view>
-		</view> -->
 
 	</view>
 </template>
@@ -53,7 +68,10 @@
 		data() {
 			return {
 				forwardIconColor: '#b5b5b5',
-				colleagueList: []
+				colleagueList: [],
+				sideKeys: [],
+				total: 0,
+				scrollViewId: '',
 			};
 		},
 		methods: {
@@ -82,11 +100,11 @@
 
 								res.data.forEach((item) => {
 									const initial = item.name.substring(0, 1)
-									// IS EN & IS COMPLIANT.
+									// IS EN.
 									if (initial.toLowerCase().charCodeAt() === enLetters[i].toLowerCase().charCodeAt()) {
 										colleague.data.push(item)
 									}
-									// IS EN & IS COMPLIANT.
+									// IS ZH.
 									if (pinyin.getFullChars(initial).substring(0, 1).toLowerCase() === enLetters[i].toLowerCase()) {
 										colleague.data.push(item)
 									}
@@ -98,8 +116,9 @@
 								}
 							}
 						}
-						console.log(colleagueList)
-						console.log(sideKeys)
+						this.colleagueList = colleagueList
+						this.sideKeys = ['↑', ...sideKeys, '#']
+						this.total = res.data.length
 						console.log('GET COLLEAGUE LIST SUCCESSFULLY.', res)
 					},
 					fail: (err) => {
@@ -109,7 +128,19 @@
 						uni.hideLoading()
 					}
 				})
-			}
+			},
+			onJumpTo(key) {
+				console.log(`SCROLL TO LINE: ${ key }`)
+				if (key === '↑') {
+					this.scrollViewId = 'top'
+					return
+				}
+				if (key === '#') {
+					this.scrollViewId = 'bottom'
+					return
+				}
+				this.scrollViewId = key
+			},
 		},
 		onLoad() {
 			console.log('ADDRESSBOOK PAGE LOADED.')
@@ -127,103 +158,150 @@
 	@import '@/common/styles/variable.scss';
 
 	.addressbook-container {
+		position: relative;
 
-		.group {
-			width: 100%;
-			border-bottom: 10px solid $spgrey;
-			padding: 10px 0;
+		.addressbook {
+			height: 100vh;
 
-			.group-item {
+			.group {
 				width: 100%;
-				height: 55px;
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;
-				align-items: center;
-				margin-bottom: 10px;
+				padding: 10px 0;
 
-				.left {
-					background-color: $primary;
-					border-radius: 3px;
-					color: $white;
-					margin-left: 30rpx;
-					width: 50px;
-					height: 50px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-
-					.icon {
-						font-size: 28px;
-						padding: 10px;
-					}
-				}
-
-				.right {
-					height: 100%;
+				.group-item {
 					width: 100%;
-					border-bottom: 1px solid $spgrey;
-					box-sizing: border-box;
+					height: 55px;
 					display: flex;
 					flex-direction: row;
 					justify-content: flex-start;
 					align-items: center;
-					padding-right: 30rpx;
-					margin-left: 30rpx;
+					margin-bottom: 10px;
 
-					.text {
-						flex: 1;
+					.left {
+						background-color: $primary;
+						border-radius: 3px;
+						color: $white;
+						margin-left: 30rpx;
+						width: 45px;
+						height: 45px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						.icon {
+							font-size: 28px;
+							padding: 10px;
+						}
+					}
+
+					.right {
+						height: 100%;
+						width: 100%;
+						border-bottom: 1px solid $spgrey;
+						box-sizing: border-box;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+						padding-right: 30rpx;
+						margin-left: 30rpx;
+
+						.text {
+							flex: 1;
+						}
+					}
+				}
+
+				.group-item:last-child {
+					margin-bottom: 0;
+
+					.right {
+						border-bottom: none;
 					}
 				}
 			}
 
-			.group-item:last-child {
-				margin-bottom: 0;
+			.colleague-list {
+				width: 100%;
 
-				.right {
-					border-bottom: none;
+				.letter {
+					height: 30px;
+					line-height: 30px;
+					color: $grey;
+					background-color: $spgrey;
+					padding: 0 30rpx;
 				}
+
+				.colleague {
+					width: 100%;
+					height: 55px;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					padding: 5px 0;
+
+					.left {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding-left: 30rpx;
+						padding-right: 30rpx;
+
+
+						image {
+							border: 1px solid $spgrey;
+							border-radius: 3px;
+							width: 45px;
+							height: 45px;
+						}
+					}
+
+					.right {
+						height: 100%;
+						width: 100%;
+						border-bottom: 1px solid $spgrey;
+						box-sizing: border-box;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+					}
+				}
+
+				.colleague:last-child {
+
+					.right {
+						border: none;
+					}
+				}
+
+			}
+
+			.total {
+				width: 100%;
+				height: 55px;
+				line-height: 55px;
+				border-top: 1px solid $spgrey;
+				text-align: center;
+				font-size: 18px;
+				color: $grey;
 			}
 		}
 
-		.colleague-list {
-			width: 100%;
+		.sidebar {
+			height: 100%;
+			width: 30rpx;
+			font-size: 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			top: 0;
+			right: 20rpx;
 
-			.colleague-item {
-				width: 100%;
-				height: 55px;
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;
-				align-items: center;
-				margin-bottom: 10px;
-
-				.left {
-					border-radius: 3px;
-					border: 1px solid $spgrey;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					margin-left: 30rpx;
-
-					image {
-						width: 50px;
-						height: 50px;
-					}
-				}
-
-				.right {
-					height: 100%;
-					width: 100%;
-					border-bottom: 1px solid $spgrey;
-					box-sizing: border-box;
-					display: flex;
-					flex-direction: row;
-					justify-content: flex-start;
-					align-items: center;
-					padding-right: 30rpx;
-					margin-left: 30rpx;
-				}
+			.sidekey {
+				margin: 3px 0;
 			}
 		}
 	}
