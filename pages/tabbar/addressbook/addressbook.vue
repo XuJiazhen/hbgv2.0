@@ -40,7 +40,10 @@
 				</view>
 				<view class="colleague" v-for="colleague in item.data">
 					<view class="left">
-						<image class="icon" :src="colleague.avatarUrl" mode="scaleToFill" />
+						<image v-if="colleague.avatarUrl" class="avatar-img" :src="colleague.avatarUrl" mode="scaleToFill" />
+						<view v-else class="avatar-text">
+							<text>{{ colleague.name | getInitial }}</text>
+						</view>
 					</view>
 					<view class="right">
 						<text class="text">{{ colleague.name }}</text>
@@ -142,6 +145,11 @@
 				this.scrollViewId = key
 			},
 		},
+		filters: {
+			getInitial(val) {
+				return val.substring(1, 3)
+			}
+		},
 		onLoad() {
 			console.log('ADDRESSBOOK PAGE LOADED.')
 			try {
@@ -150,7 +158,8 @@
 			} catch (e) {
 				console.log(e)
 			}
-		}
+		},
+
 	}
 </script>
 
@@ -246,13 +255,29 @@
 						align-items: center;
 						padding-left: 30rpx;
 						padding-right: 30rpx;
+						border-radius: 3px;
+						width: 45px;
+						height: 45px;
 
 
-						image {
-							border: 1px solid $spgrey;
+						.avatar-img {
+							box-sizing: border-box;
 							border-radius: 3px;
 							width: 45px;
 							height: 45px;
+						}
+
+						.avatar-text {
+							box-sizing: border-box;
+							border-radius: 3px;
+							width: 45px;
+							height: 45px;
+							background-color: $primary;
+							color: $white;
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
 						}
 					}
 
