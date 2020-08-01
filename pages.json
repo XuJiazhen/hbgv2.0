@@ -123,11 +123,25 @@
 	}, {
 		"path": "pages/tabbar/addressbook/org/org",
 		"style": {}
-	}    ,{
-            "path" : "pages/tabbar/addressbook/search/search",
-            "style" : {}
-        }
-    ],
+	}, {
+		"path": "pages/tabbar/addressbook/search/search",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
+	}, {
+		"path": "pages/tabbar/addressbook/contact/contact",
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
+	}],
 	"globalStyle": {
 		"navigationStyle": "default",
 		"navigationBarTitleText": "慧办公V2.0",

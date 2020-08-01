@@ -41,7 +41,7 @@
 					animationDuration: 300
 				})
 			},
-			loadNewsList() {
+			getNewsList() {
 				uni.showLoading({
 					title: '正在加载'
 				})
@@ -67,8 +67,12 @@
 			},
 		},
 		onLoad() {
-			this.loadNewsList()
 			console.log('STUDY PAGE LOADED.')
+			try {
+				this.getNewsList()
+			} catch (e) {
+				console.log(e)
+			}
 		}
 	}
 </script>

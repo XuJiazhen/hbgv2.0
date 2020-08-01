@@ -46,7 +46,7 @@
 				<view class="letter" :id="item.letter">
 					<text>{{ item.letter }}</text>
 				</view>
-				<view class="colleague" v-for="colleague in item.data">
+				<view class="colleague" v-for="colleague in item.data" @click="toContactInfo(colleague.hj_uid)">
 					<view class="left">
 						<image v-if="colleague.avatarUrl" class="avatar-img" :src="colleague.avatarUrl" mode="scaleToFill" />
 						<view v-else class="avatar-text">
@@ -83,6 +83,7 @@
 				sideKeys: [],
 				total: 0,
 				scrollViewId: '',
+				sourceData: []
 			};
 		},
 		methods: {
@@ -130,6 +131,7 @@
 						this.colleagueList = colleagueList
 						this.sideKeys = ['↑', ...sideKeys, '#']
 						this.total = res.data.length
+						this.sourceData = res.data
 						console.log('GET COLLEAGUE LIST SUCCESSFULLY.', res)
 					},
 					fail: (err) => {
@@ -153,11 +155,19 @@
 				this.scrollViewId = key
 			},
 			onSearchTap() {
-				// uni.navigateTo({
-				// 	url: `./search/search?data`
-				// })
+				uni.navigateTo({
+					url: `./search/search?source_data=${ JSON.stringify(this.sourceData) }`,
+					animationType: 'fade-in',
+					animationDuration: 300
+				})
 				console.log('TO PAGE SEARCH.')
 			},
+			toContactInfo(id) {
+				uni.navigateTo({
+					url: `./contact/contact?hj_uid=${ id }`
+				})
+				console.log('TO PAGE CONTACT.')
+			}
 		},
 		filters: {
 			getInitial(val) {
@@ -313,6 +323,7 @@
 							border-radius: 3px;
 							width: 45px;
 							height: 45px;
+							background-color: $spgrey;
 						}
 
 						.avatar-text {
@@ -370,8 +381,10 @@
 			justify-content: center;
 			align-items: center;
 			position: fixed;
-			top: 0;
-			right: 20rpx;
+			top: calc(var(--status-bar-height) + 55px);
+			right: 0;
+			z-index: 999;
+			padding: 0 20rpx;
 
 			.sidekey {
 				margin: 3px 0;
