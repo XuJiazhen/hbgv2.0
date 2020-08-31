@@ -11,7 +11,7 @@
 		<view class="news-list">
 			<view class="news-item" v-for="(item, index) in newsList">
 				<view>
-					<image :src="item.pic" mode="aspectFit" />
+					<image :src="item.pic" mode="aspectFill" />
 				</view>
 				<view class="desc">
 					<text class="title">{{ item.title }}</text>
@@ -116,7 +116,7 @@
 			margin-top: calc(var(--status-bar-height) + 55px);
 
 			.news-item {
-				padding: 0 5px;
+				padding: 10px 5px;
 				border-bottom: 1px solid $spgrey;
 				display: flex;
 				flex-direction: row;
@@ -124,29 +124,24 @@
 				align-items: center;
 
 				image {
-					width: 256rpx;
-					height: 256rpx;
+					width: 220rpx;
+					height: 180rpx;
 					margin-right: 10px;
-					background-color: red;
-					margin: 0;
-					padding: 0;
 					border-radius: 10px;
 				}
 
 				.desc {
 					display: flex;
 					flex-direction: column;
-					justify-content: flex-start;
-					align-items: center;
 
 					.title {
 						font-size: 18px;
 						font-weight: bold;
-						text-overflow: ellipsis;
 						margin-bottom: 3px;
 					}
 
 					.content {
+						width: 100%;
 						font-size: 14px;
 						color: $grey;
 					}

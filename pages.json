@@ -116,7 +116,13 @@
 		}
 	}, {
 		"path": "pages/tabbar/addressbook/phone/phone",
-		"style": {}
+		"style": {
+			"navigationStyle": "custom",
+			"navigationBarTextStyle": "white",
+			"app-plus": {
+				"bounce": "none"
+			}
+		}
 	}, {
 		"path": "pages/tabbar/addressbook/client/client",
 		"style": {}

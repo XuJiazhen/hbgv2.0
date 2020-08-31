@@ -31,7 +31,7 @@
 					</view>
 				</view>
 
-				<view class="group-item">
+				<view class="group-item" @click="toLocalBook">
 					<view class="left">
 						<text class="icon iconfont icon-dianhua_o" />
 					</view>
@@ -167,6 +167,12 @@
 					url: `./contact/contact?hj_uid=${ id }`
 				})
 				console.log('TO PAGE CONTACT.')
+			},
+			toLocalBook() {
+				uni.navigateTo({
+					url: './phone/phone'
+				})
+				console.log('TO PAGE LOCALBOOK.')
 			}
 		},
 		filters: {
